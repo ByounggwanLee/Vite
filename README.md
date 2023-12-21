@@ -32,7 +32,7 @@ vue파일의 스니펫, 하일라이트, 포맷팅을 해주는 확장프로그�
 npm을 이용하여 Vite 기반의 Vue 프로젝트를 생성한다.
 #### 1. cmd(VSCode 터미널)에서 프로젝트를 생성하고 싶은 위치로 이동 후 npm 명령어로 프로젝트 생성
 npm init vue@latest 명령어를 입력하고 프로젝트 이름과 옵션을 선택하면 프로젝트가 생성된다.
-![image](https://github.com/ByounggwanLee/Vite/assets/108439363/936441fa-7c30-4693-be04-186954d20cb3)
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/dbe325e1-f574-40cf-9c49-2cebe8ff548a)
 > * Router - src/router 폴더가 생성된다.<br>
 > * Pinia - src/stores 폴더가 생성된다.<br>
 >   * 기존의 Vue 상태 관리 라이브러리인 Vuex를 대체할 수 있는 라이브러리<br>
@@ -46,10 +46,14 @@ npm install
 npm install을 진행하면 프로젝트에 node_modules 폴더가 생성되고, 필요한 JavaScript library들이 설치된다.
 
 #### 3. VSCode로 프로젝트 열기
-* npm install 전 프로젝트 구조
+* npm install 전 프로젝트 구조<br>
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/ba248583-f105-41ae-a300-7cfce0dd1229)
   * node_modules 폴더가 존재하지 않는다.
+
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/c76d42cc-1888-4ede-968a-d6f8d0c90f11)   
 * npm install 후 프로젝트 구조
   * node_modules 폴더와 package-lock.json 파일이 생성되었다.
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/dfb59c2d-a7a4-4435-8ffa-ae058f651368)
 
 ### C. 프로젝트 기본 구조
 * package.json
