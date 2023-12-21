@@ -52,10 +52,13 @@ npm install을 진행하면 프로젝트에 node_modules 폴더가 생성되고,
 
 ![image](https://github.com/ByounggwanLee/Vite/assets/108439363/c76d42cc-1888-4ede-968a-d6f8d0c90f11)   
 * npm install 후 프로젝트 구조
-  * node_modules 폴더와 package-lock.json 파일이 생성되었다.
+  * node_modules 폴더와 package-lock.json 파일이 생성되었다.<br>
 ![image](https://github.com/ByounggwanLee/Vite/assets/108439363/dfb59c2d-a7a4-4435-8ffa-ae058f651368)
 
 ### C. 프로젝트 기본 구조
+
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/3fa1b2b1-7089-4b0e-97d6-56d8066769f8)
+
 * package.json
   * 프로젝트에 대한 정보
   * 프로젝트의 이름, 버전, private 여부, 배포 및 개발에서 사용할 모듈 정보, 실행 명령어, 지원할 브라우저에 대한 설정 등을 포함
@@ -138,5 +141,34 @@ npm install을 진행하면 프로젝트에 node_modules 폴더가 생성되고,
 }
 ```
 * 프로젝트 실행: 터미널 창에 npm run dev 입력
+```
+D:\Vite\vue-project>npm run dev
+
+> vue-project@0.0.0 dev
+> vite
+
+
+  VITE v5.0.10  ready in 549 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
 * 프로젝트 빌드: 터미널 창에 npm run build 입력
+```
+D:\Vite\vue-project>npm run build
+
+> vue-project@0.0.0 build
+> vite build
+
+vite v5.0.10 building for production...
+✓ 44 modules transformed.
+dist/index.html                      0.43 kB │ gzip:  0.29 kB
+dist/assets/AboutView-ug8e6cRs.css   0.09 kB │ gzip:  0.10 kB
+dist/assets/index-x6itbcqJ.css       4.21 kB │ gzip:  1.30 kB
+dist/assets/AboutView-FIK4syfU.js    0.22 kB │ gzip:  0.20 kB
+dist/assets/index-tBwP6Qjq.js       86.76 kB │ gzip: 34.20 kB
+✓ built in 1.02s
+```
 * 실행 화면
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/2a73bdcc-e8b9-473f-ab6d-1428088f96a0)
