@@ -75,45 +75,64 @@ npm install을 진행하면 프로젝트에 node_modules 폴더가 생성되고,
 * src
   * 작성해야 하는 소스코드들 (대부분의 코딩이 이루어지는 곳)
   * assets
+    * component(.vue 파일)에서 사용되는 정적 파일들
+    * cf) public과는 달리 webpack의 처리를 받는다.
+  * views
+    * .vue 확장자를 가진 컴포넌트 파일들 - 화면 전체에 해당하는 컴포넌트를 관리 (cf. components)
+  * components
+    * .vue 확장자를 가진 컴포넌트 파일들 - 화면 전체가 아니라 부분으로 구성되어 재사용할 수 있는 컴포넌트 (cf. views)
+    * \<template>, <script>, <style> 부분으로 나뉜다.
+      * \<template>: HTML로 화면상에 표시할 요소들을 작성
+      * <script>: 스크립트 코드 작성. import/export
+      * <style>: HTML 요소를 꾸며줄 css 구문 작성. scoped 속성을 사용하면 특정 컴포넌트에서만 고유의 스타일 선언 가능 
+  * router
+    * Routing: 웹 페이지 간의 이동 방법으로 Single Page Application(SPA)에서 주로 사용된다.
+      * SPA: 페이지를 이동할 때마다 서버에서 웹 페이지를 요청하여 새로 갱신하는 것이 아니라, 사용할 페이지들을 미리 받아놓고 페이지 이동시에 클라이언트 라우팅을 이용하여 화면을 갱신하는 방법
+   * stores
+     * Vue의 상태 관리 라이브러리
+   * main.js
+     * 프로그램 시작 지점(entry point)
+   
+* .eslintrc.cjs
+  * 코드에 대한 eslint 설정
+  * Prettier에 대한 값으로 rule 지정
+   
+* .prettierrc.json
+  * Prettier 설정
 
-* component(.vue 파일)에서 사용되는 정적 파일들
-cf) public과는 달리 webpack의 처리를 받는다.
+* vite.config.js
+  * Vite에 대한 설정
 
-views
-
-.vue 확장자를 가진 컴포넌트 파일들 - 화면 전체에 해당하는 컴포넌트를 관리 (cf. components)
-components
-
-.vue 확장자를 가진 컴포넌트 파일들 - 화면 전체가 아니라 부분으로 구성되어 재사용할 수 있는 컴포넌트 (cf. views)
-
-<template>, <script>, <style> 부분으로 나뉜다.
-
-<template>: HTML로 화면상에 표시할 요소들을 작성
-
-<script>: 스크립트 코드 작성. import/export
-
-<style>: HTML 요소를 꾸며줄 css 구문 작성. scoped 속성을 사용하면 특정 컴포넌트에서만 고유의 스타일 선언 가능
-
-router
-
-Routing: 웹 페이지 간의 이동 방법으로 Single Page Application(SPA)에서 주로 사용된다.
-
-SPA: 페이지를 이동할 때마다 서버에서 웹 페이지를 요청하여 새로 갱신하는 것이 아니라, 사용할 페이지들을 미리 받아놓고 페이지 이동시에 클라이언트 라우팅을 이용하여 화면을 갱신하는 방법
-stores
-
-Vue의 상태 관리 라이브러리
-main.js
-
-프로그램 시작 지점(entry point)
-.eslintrc.cjs
-
-코드에 대한 eslint 설정
-
-Prettier에 대한 값으로 rule 지정
-
-.prettierrc.json
-
-Prettier 설정
-vite.config.js
-
-Vite에 대한 설정
+#### 4. 프로젝트 실행
+* package.json
+```
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite", // 개발 서버에서 프로젝트를 실행할 때 실행되는 명령어
+    "build": "vite build", // 빌드할 때 실행되는 명령어
+    "preview": "vite preview", // 개발 환경에서의 미리보기
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  	 // eslint로 문법 체크
+  },
+  "dependencies": { // 배포 환경에서 필요한 라이브러리 정보
+    "pinia": "^2.0.28",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": { // 개발 환경에서 필요한 라이브러리 정보
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "prettier": "^2.7.1",
+    "vite": "^4.0.0"
+  }
+}
+```
+* 프로젝트 실행: 터미널 창에 npm run dev 입력
+* 프로젝트 빌드: 터미널 창에 npm run build 입력
+* 실행 화면
