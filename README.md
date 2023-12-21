@@ -22,7 +22,11 @@ npm install -g vue
 ```
 npm install -g @vue/cli
 ```
-
+* vite 설치
+> vue-cli는 기본 vue 개발환경을 설정해주는 도구임.
+```
+npm install -g vite
+```
 #### 3. Vetur확장프로램 설치
 vue파일의 스니펫, 하일라이트, 포맷팅을 해주는 확장프로그램
 * Vscode > 확장 프로그램 > vetur 검색(maker : Pine Wu)
