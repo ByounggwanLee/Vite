@@ -43,6 +43,9 @@ npm init vue@latest 명령어를 입력하고 프로젝트 이름과 옵션을 �
 > * ESLint - .eslintrc.cjs 파일이 생성된다.<br>
 > * Prettier - .prettierrc.json 파일이 생성된다.<br>
 
+npm init vite@latest 명령어를 입력하고 프로젝트 이름과 옵션을 선택하면 프로젝트가 생성된다.
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/ea3aa3af-5b90-4446-915c-839dcba9071f)
+
 #### 2. 프로젝트 폴더로 이동하여 npm을 설치한다.
 cd <프로젝트 이름>
 npm install
@@ -58,10 +61,12 @@ npm install을 진행하면 프로젝트에 node_modules 폴더가 생성되고,
 * npm install 후 프로젝트 구조
   * node_modules 폴더와 package-lock.json 파일이 생성되었다.<br>
 ![image](https://github.com/ByounggwanLee/Vite/assets/108439363/dfb59c2d-a7a4-4435-8ffa-ae058f651368)
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/6e47f4fc-0343-4e00-93a1-bfd1bd75a191)
 
 ### C. 프로젝트 기본 구조
 
 ![image](https://github.com/ByounggwanLee/Vite/assets/108439363/3fa1b2b1-7089-4b0e-97d6-56d8066769f8)
+![image](https://github.com/ByounggwanLee/Vite/assets/108439363/d0adb07f-7670-4030-9ccc-6ff08587a5ab)
 
 * package.json
   * 프로젝트에 대한 정보
