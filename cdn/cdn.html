@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 머스테치 보간법-->
+            <h1>Hello {{ userName }}!!</h1>
+            
+            <!-- v-model 보간법-->
+            <input type="text" v-model="userName">
+            
+            <p v-if="userName.length > 9">user name length is too long</p>
+            <!-- 배열 -->
+            <p>{{ frameworks }}</p>
+
+            <!-- v-on / @ Event 처리 -->
+            <button v-on:click="addItem">addItem</button>
+            <button @click="removeItem">removeItem</button>
+            <button @click="fetchTodos">fetchTodos</button>
+
+            <!-- 루핑 처리 -->
+            <ul>
+                <li v-for="framework in frameworks">
+                    {{ framework }}
+                </li>
+            </ul>
+            <ul>
+                <li v-for="todo in todos">
+                    {{ todo.title }} => {{ todo }}
+                </li>
+            </ul>
+            <h2>
+                완료된 Todo는 총 : {{ completedTodos }} 입니다.
+            </h2>
+        </div>
+        <script>
+            const { createApp } = Vue
+
+            createApp({
+                // Data
+                data() {
+                    return {
+                        userName: 'Daniel',
+                        frameworks: [ 'Angular', 'React', 'Vue'],
+                        todos: []
+                    }
+                },
+
+                computed: {
+                    completedTodos(){
+                        return this.todos.filter(todo => todo.completed == true).length
+                    }
+                },
+
+                // Method
+                methods: {
+                    addItem() {
+                        console.log(this.userName)
+                        // 배열추가
+                        this.frameworks.push(this.userName)
+                    },
+
+                    removeItem() {
+                        // 배열삭제
+                        this.frameworks.pop()
+                    },
+
+                    fetchTodos() {
+                        fetch("https://jsonplaceholder.typicode.com/todos?_start=0&_end=20")
+                        //.then(data=>console.log(data))   // 로그로 출력
+                        .then(res=> res.json())            // 결과 JSON 변환
+                        .then(data=> this.todos = data)    // request결과을 data에 저장
+                        //.then(data=>console.log(data))   // 로그로 출력
+                    }
+
+                }
+            }).mount('#app')
+        </script>    
+    </body>
+</html>
